@@ -20,10 +20,28 @@ export function ChatArea() {
   const endRef = useRef<HTMLDivElement | null>(null);
   const [selectedMode, setSelectedMode] = useState<Mode>(MODES[0]!);
   const [showModeMenu, setShowModeMenu] = useState(false);
+  const modeMenuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages.length]);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modeMenuRef.current && !modeMenuRef.current.contains(event.target as Node)) {
+        setShowModeMenu(false);
+      }
+    };
+
+    if (showModeMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showModeMenu]);
 
   const send = async () => {
     if (!input.trim() || isLoading) return;
@@ -146,21 +164,21 @@ export function ChatArea() {
         <div ref={endRef} />
       </div>
 
-      <div className="flex-shrink-0 p-4 sm:p-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 input-area">
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-
-          <div className="flex items-center gap-2 sm:gap-3">
+      <div className="flex-shrink-0 p-3 sm:p-4 md:p-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 input-area">
+        <div className="flex flex-col gap-3">
+         
+          <div className="flex items-center gap-2 sm:gap-3 justify-center sm:justify-start">
             <div className="relative">
               <button
-                className="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-300 dark:border-gray-600 transition-colors duration-200 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+                className="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 hover:bg-indigo-200 dark:hover:bg-indigo-800 border border-indigo-300 dark:border-indigo-600 transition-colors duration-200 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
                 aria-label="Select mode"
                 type="button"
                 onClick={() => setShowModeMenu((v) => !v)}
               >
-                <FaPlus size={16} />
+                <FaPlus size={16} className="text-indigo-600 dark:text-indigo-400" />
               </button>
               {showModeMenu && (
-                <div className="absolute bottom-12 left-0 z-10 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-2">
+                <div className="absolute bottom-12 left-0 z-10 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-2 max-h-48 overflow-y-auto" ref={modeMenuRef}>
                   {MODES.map((mode) => (
                     <button
                       key={mode.value}
@@ -176,14 +194,15 @@ export function ChatArea() {
               )}
             </div>
             
-
-            <span className="flex items-center px-3 py-2 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 text-xs font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
-              {selectedMode.icon} <span className="hidden sm:inline">{selectedMode.label}</span>
+         
+            <span className="flex items-center px-2 sm:px-3 py-2 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 text-xs font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+              {selectedMode.icon} <span className="ml-1">{selectedMode.label}</span>
             </span>
           </div>
           
 
-          <div className="flex items-center gap-2 sm:gap-3 flex-1">
+        
+          <div className="flex items-center gap-2 sm:gap-3">
      
             <div className="flex-1 relative">
               <input

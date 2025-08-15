@@ -16,15 +16,15 @@ export function ParametersPanel() {
     <div className="h-full flex flex-col bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 sidebar-shadow">
       {/* Enhanced Header Section with Icon Toggle */}
       <div className="flex-shrink-0 p-4 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
-        <div className="flex items-center justify-center mb-3">
+        <div className="flex items-center justify-center">
           {/* Icon-only title (no text label) */}
           <button
-            className="group flex items-center justify-center w-16 h-8 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-all duration-300 ease-in-out focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 shadow-sm hover:shadow-md hover:scale-105 interactive-element"
+            className="group flex items-center justify-center w-14 h-14 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition-all duration-300 ease-in-out focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 shadow-sm hover:shadow-md hover:scale-105 interactive-element"
             onClick={() => setExpanded((v) => !v)}
             aria-label={expanded ? 'Collapse sidebar' : 'Expand sidebar'}
             title={expanded ? 'Collapse sidebar' : 'Expand sidebar'}
           >
-            <FaBars className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+            <FaBars className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
           </button>
         </div>
         {/* Removed subtitle text for a cleaner header */}
