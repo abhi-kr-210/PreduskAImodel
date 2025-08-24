@@ -1,0 +1,165 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/style/home.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.home_container {
+    padding-top:150px;
+  height: 100vh;
+    background: radial-gradient(circle at top left, #1a1a1a, #0d0d0d, #000000),
+              linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+  background-blend-mode: overlay;
+}
+.home_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  position: relative;
+  padding: 60px;
+}
+.logo_img{
+     max-width: 200px !important;
+}
+.home_text{
+    color:white;
+      background: linear-gradient(90deg, #00f0ff, #a020f0, #ff00ff);
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: var(--oswald-font);
+}
+.loading-text {
+	place-self: center;
+	background: linear-gradient(90deg, #00f, #0ff, #00f) -100%/ 200%;
+
+	-webkit-background-clip: text;
+	        background-clip: text;
+
+	color: transparent;
+	font: 900 clamp(4em, 6vw, 10em) exo, sans-serif;
+	animation: shimmer 2s linear infinite
+}
+
+@keyframes shimmer { to { background-position: 100% } }
+
+
+
+
+
+.animated-border-box, .animated-border-box-glow{
+  max-height: 90px;
+  max-width: 300px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden; 
+  z-index: 0;
+  
+	border-radius: 10px;
+}
+
+.animated-border-box-glow{
+  overflow: hidden;
+  
+  filter: blur(20px);
+}
+
+.animated-border-box:before, .animated-border-box-glow:before {
+  content: '';
+  z-index: -2;
+  text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+	width: 99999px;
+	height: 99999px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+ 
+	background-image: conic-gradient(rgba(0,0,0,0), #1976ed, rgba(0,0,0,0) 25%);
+  
+	animation: rotate 4s linear infinite;
+}
+
+.animated-border-box:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+ 
+	left: 5px;
+	top: 5px;
+
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+
+	background: #292a2e;
+ 
+	border-radius: 7px;
+}
+
+@keyframes rotate {
+	100% {
+		transform: translate(-50%, -50%) rotate(1turn);
+	}
+}
+.home_link{
+    margin-left: 75px;
+    margin-top: 22px;
+}
+.arrow_image{
+     width: 184px;
+     display: inline!important;
+     margin-left: -26px;
+     margin-bottom: 2px!important;
+}
+@media (max-width: 768px) {
+  .home_text {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .logo_img {
+    max-width: 150px !important;
+  }
+  .row .home_col1{
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+
+ .home_text {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+  .logo_img {
+    max-width: 200px !important;
+  }
+  .row .home_col1{
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+  }
+
+}
+@media (max-width: 500px){
+    .animated-border-box, .animated-border-box-glow{
+            max-height: 70px;
+            max-width: 200px;
+    }
+    .home_link{
+            margin-left: 30px;
+            margin-top: 22px;
+     }
+     .arrow_image {
+          width: 148px;
+          margin-left: -9px;
+     }
+      .home_text {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+}
