@@ -25,14 +25,13 @@
     font-family: var(--oswald-font);
 }
 .loading-text {
-	place-self: center;
 	background: linear-gradient(90deg, #00f, #0ff, rgb(13, 13, 224)) -100%/ 200%;
 
 	-webkit-background-clip: text;
 	        background-clip: text;
 
 	color: transparent;
-	font: 900 clamp(4em, 6vw, 6rem) exo, sans-serif;
+	font: sans-serif;
 	animation: shimmer 2s linear infinite
 }
 
