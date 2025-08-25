@@ -73,7 +73,7 @@
 	background-repeat: no-repeat;
 	background-position: 0 0;
  
-	background-image: conic-gradient(rgba(0,0,0,0), #1976ed, rgba(0,0,0,0) 25%);
+	background-image: conic-gradient(rgba(0,0,0,0), #34669e, rgba(0,0,0,0) 25%);
   
 	animation: rotate 4s linear infinite;
 }
@@ -89,7 +89,7 @@
 	width: calc(100% - 10px);
 	height: calc(100% - 10px);
 
-	background: #292a2e;
+	background: #83c4f6;
  
 	border-radius: 7px;
 }

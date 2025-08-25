@@ -5,9 +5,11 @@ import Link from 'next/link';
 import logo_home from '@/src/assets/logo_home.png';
 import arrow1 from '@/src/assets/arrow1.png';
 import "../../src/style/home.css";
+import Background from '../ui/Background';
 export default function Home() {
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 lg:pt-36 bg-gradient-radial from-gray-900 via-gray-800 to-black relative overflow-hidden">
+    <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 lg:pt-36 overflow-hidden">
+       <Background/>
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -24,7 +26,7 @@ export default function Home() {
           </div>
           <div className="lg:w-2/3 flex justify-center lg:justify-start items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse leading-tight">
+              <h1 className=" def:text-4xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold bg-gradient-to-r from-cyan-200 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse leading-tight">
                 Welcome to the Mind of Your AI 🧠
               </h1>
             </div>

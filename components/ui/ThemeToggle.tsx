@@ -15,7 +15,10 @@ export function ThemeToggle() {
 
   return (
     <button
-      className="focus-ring rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 px-2 sm:px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors duration-200 max-[500px]:border-transparent max-[500px]:bg-transparent max-[500px]:hover:bg-transparent"
+      className=" rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-50
+       dark:hover:bg-gray-700 px-2 sm:px-3 py-1.5 text-sm font-medium text-gray-700
+        dark:text-gray-200 transition-colors duration-200 max-[500px]:border-transparent
+         max-[500px]:bg-transparent max-[500px]:hover:bg-transparent flex justify-center items-center"
       onClick={toggleTheme}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
@@ -28,7 +31,7 @@ export function ThemeToggle() {
         ) : (
           <FaMoon className="w-4 h-4" />
         )}
-        <span className="max-[500px]:hidden">{isDark ? 'Light mode' : 'Dark mode'}</span>
+        {/* <span className="max-[500px]:hidden">{isDark ? 'Light mode' : 'Dark mode'}</span> */}
       </span>
     </button>
   );
