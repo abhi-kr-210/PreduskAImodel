@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <div className="lg:w-2/3 flex justify-center lg:justify-start items-center">
             <div className="text-center lg:text-left">
-              <h1 className=" def:text-4xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold bg-gradient-to-r from-cyan-200 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse leading-tight">
+              <h1 className="loading-text def:text-5xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold bg-gradient-to-r from-cyan-200 via-purple-400 to-pink-400 bg-clip-text text-transparent  animate-pulse leading-tight">
                 Welcome to the Mind of Your AI 🧠
               </h1>
             </div>
