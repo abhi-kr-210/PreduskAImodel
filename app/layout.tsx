@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 export const metadata: Metadata = {
-  title: 'Predusk AI',
+  title: 'AIverse Hub',
   description: 'A polished AI interface prototype by Predusk AI',
   icons: {
     icon: '/favicon.ico',

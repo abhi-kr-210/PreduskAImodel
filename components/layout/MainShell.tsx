@@ -61,7 +61,7 @@ export function MainShell() {
               ml-[51px]
                " >
                 <Image src="/logo.png" alt="Logo" width={32} height={32}  />
-                <h1 className="text-lg font-semibold text-gray-900 dark:text-white">Predusk AI</h1>
+                <h1 className="text-lg font-semibold text-gray-900 dark:text-white">AIverse Hub</h1>
               </Link>
             </div>
             <div className="flex items-center gap-4">
